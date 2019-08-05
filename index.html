@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Brad's Excellent Weather Website</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- This section draws the Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand btn-primary p-2 ml-4 MyFancyTextNav" href="index.html"><strong>Latitude</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto justify-content-end">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="comparison.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="maxtemp.html">Max Temperature</a>
+            <a class="dropdown-item" href="humidity.html">Humidity</a>
+            <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+            <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="comparison.html">Comparison<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="data.html">Data</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- This section draws the large Card on the left of the browser window-->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 mt-4 ml-4 mr-1">
+      <div class="card img-responsive">
+        <div class="card-body">
+          <h2 class="card-title MyFancyText">Summary: Latitude vs. X</h2>
+          <hr>
+          <div class="container">
+            <img src="Resources/assets/images/Fig1.png" align="left" class="w-25 h-25 img-fluid no_border">
+            <p class="card-text">The purpose of this project was to analyze how weather changes as you get closer
+               to the equator.  To accomplish this analysis, we first pulled data from the OpenWeatherMap API
+               to assemble a dataset on over 500 cities.</p>
+               <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.  
+                Factors we looked at included temperature, cloudiness, wind speed and humidity.  
+                This site provides the source data and visualizations created as part of the analysis, 
+                as well as explanations and descriptions of any trends and correlations witnessed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This section controls the 4 thumbnail visualizations, which are on the right
+        for the large screen size, and below the prior card for the medium and smaller screen sizes-->
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-4">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Clicking on the title "Visualizations" will take the user to the Comparison Page-->
+          <a href="comparison.html"><h3 class="card-title MyFancyText">Visualizations</h3></a>
+          <hr>
+
+          <!-- Used the trick of column wrapping here with the 4 images 
+              In Large mode, the row is defined with 24 cells, so it will wrap to 2 rows of 12
+              For Medium and small, it will become one row of 12 cells -->
+
+          <!-- Also, I made each graph a hyperlink to it's corresponding "Plot" page -->
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-6 col-lg-6">
+                <div class="thumbnail border border-white">
+                  <a href="maxtemp.html">
+                    <img src="Resources/assets/images/Fig1.png" alt="..." class="img-fluid border border-white">
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-6 col-lg-6">
+                <div class="thumbnail border border-white">
+                  <a href="humidity.html">
+                    <img src="Resources/assets/images/Fig2.png" alt="..." class="img-fluid border border-white">
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-6 col-lg-6">
+                <div class="thumbnail border border-white">
+                  <a href="cloudiness.html">
+                   <img src="Resources/assets/images/Fig3.png" alt="..." class="img-fluid border border-white">
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-6 col-lg-6">
+                <div class="thumbnail border border-white">
+                  <a href="windspeed.html">
+                   <img src="Resources/assets/images/Fig4.png" alt="..." class="img-fluid border border-white">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
